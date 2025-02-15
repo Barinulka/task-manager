@@ -1,15 +1,8 @@
 # Task Manager
 
-## Развертываение проекта локально
-> Добавить env файл
-```
-cp .env-example .env
-```
-> Установить зависимости
-```
-composer install
-```
-> Применить миграции
-```
-php bin/console doctrine:migration:migrate
-```
+## Requirements
+* PHP >= 8.2
+* Symfony >= 7.2
+
+## Работа с проектом
+* [Развертываение проекта](./doc/DEPLOY.md)
