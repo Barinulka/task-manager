@@ -19,8 +19,8 @@ class RegisterDTO
     #[Assert\NotBlank]
     #[Assert\Length(min: 5)]
     #[Assert\Regex(
-        pattern: "/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/",
-        message: "Password must contain at least one letter and one number."
+        pattern: "/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{5,}$/",
+        message: "Пароль должен содержать как минимум одну букву и одну цифру и иметь не менее 5 символов"
     )]
     public ?string $password = null;
 }

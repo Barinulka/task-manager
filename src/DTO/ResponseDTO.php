@@ -7,7 +7,7 @@ use Symfony\Component\Serializer\Attribute\Groups;
 class ResponseDTO
 {
     #[Groups(['response'])]
-    public bool $success;
+    public string $status;
     #[Groups(['response'])]
     public string $message;
     #[Groups(['response'])]
@@ -15,9 +15,9 @@ class ResponseDTO
     #[Groups(['response'])]
     public ?array $data;
 
-    public function __construct(bool $success, string $message, string $code, ?array $data = null)
+    public function __construct(string $success, string $message, string $code, ?array $data = null)
     {
-        $this->success = $success;
+        $this->status = $success;
         $this->message = $message;
         $this->code = $code;
         $this->data = $data;
@@ -26,7 +26,7 @@ class ResponseDTO
     public function getResponse(): array
     {
         $response = [
-            'success' => $this->success,
+            'status' => $this->status,
             'message' => $this->message
         ];
 

@@ -30,7 +30,7 @@ class RegisterService
             throw new ApiRegistrationException();
         }
 
-        return new ResponseDTO(true, sprintf('Пользователь %s успешно зарегистрирован', $registerDTO->username), Response::HTTP_CREATED, ['userId' => $user->getId()] );
+        return new ResponseDTO('success', sprintf('Пользователь %s успешно зарегистрирован', $registerDTO->username), Response::HTTP_CREATED, ['userId' => $user->getId()] );
     }
 
     private function createUser(RegisterDTO $registerDTO): User
